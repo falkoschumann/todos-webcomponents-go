@@ -1,5 +1,9 @@
 name: Go
 
+defaults:
+  run:
+    working-directory: todos-backend-server
+
 on:
   push:
     branches: [ "main" ]
