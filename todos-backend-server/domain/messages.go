@@ -29,6 +29,13 @@ type DestroyTodoCommand struct {
 
 type DestroyTodoCommandHandler func(c DestroyTodoCommand) CommandStatus
 
+type SaveTodoCommand struct {
+	Id       int    `json:"id"`
+	NewTitle string `json:"newTitle"`
+}
+
+type SaveTodoCommandHandler func(c SaveTodoCommand) CommandStatus
+
 type SelectTodosQuery struct{}
 
 type SelectTodosQueryResult struct {
