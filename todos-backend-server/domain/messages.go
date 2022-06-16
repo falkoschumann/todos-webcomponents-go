@@ -19,6 +19,10 @@ type AddTodoCommand struct {
 
 type AddTodoCommandHandler func(c AddTodoCommand) CommandStatus
 
+type ClearCompletedCommand struct{}
+
+type ClearCompletedCommandHandler func(c ClearCompletedCommand) CommandStatus
+
 type SelectTodosQuery struct{}
 
 type SelectTodosQueryResult struct {
