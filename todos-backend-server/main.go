@@ -25,6 +25,7 @@ func createTodosRouter(r domain.TodosRepository) {
 	http.Handle("/api/todos/save-todo", portal.SaveTodo(messagehandler.SaveTodo(r)))
 	http.Handle("/api/todos/select-todos", portal.SelectTodos(messagehandler.SelectTodos(r)))
 	http.Handle("/api/todos/toggle-all", portal.ToggleAll(messagehandler.ToggleAll(r)))
+	http.Handle("/api/todos/toggle-todo", portal.ToggleTodo(messagehandler.ToggleTodo(r)))
 }
 
 func runServer(host string, port uint) {

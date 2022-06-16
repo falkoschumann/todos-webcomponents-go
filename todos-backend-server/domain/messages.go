@@ -42,6 +42,12 @@ type ToggleAllCommand struct {
 
 type ToggleAllCommandHandler func(c ToggleAllCommand) CommandStatus
 
+type ToggleTodoCommand struct {
+	Id int `json:"id"`
+}
+
+type ToggleTodoCommandHandler func(c ToggleTodoCommand) CommandStatus
+
 type SelectTodosQuery struct{}
 
 type SelectTodosQueryResult struct {
