@@ -36,6 +36,12 @@ type SaveTodoCommand struct {
 
 type SaveTodoCommandHandler func(c SaveTodoCommand) CommandStatus
 
+type ToggleAllCommand struct {
+	Checked bool `json:"checked"`
+}
+
+type ToggleAllCommandHandler func(c ToggleAllCommand) CommandStatus
+
 type SelectTodosQuery struct{}
 
 type SelectTodosQueryResult struct {
