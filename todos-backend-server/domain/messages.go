@@ -23,6 +23,12 @@ type ClearCompletedCommand struct{}
 
 type ClearCompletedCommandHandler func(c ClearCompletedCommand) CommandStatus
 
+type DestroyTodoCommand struct {
+	Id int `json:"id"`
+}
+
+type DestroyTodoCommandHandler func(c DestroyTodoCommand) CommandStatus
+
 type SelectTodosQuery struct{}
 
 type SelectTodosQueryResult struct {
