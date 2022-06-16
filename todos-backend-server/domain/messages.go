@@ -13,6 +13,12 @@ func Failure(errorMessage string) CommandStatus {
 	return CommandStatus{Success: false, ErrorMessage: errorMessage}
 }
 
+type AddTodoCommand struct {
+	Title string `json:"title"`
+}
+
+type AddTodoCommandHandler func(c AddTodoCommand) CommandStatus
+
 type SelectTodosQuery struct{}
 
 type SelectTodosQueryResult struct {
