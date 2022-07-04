@@ -14,11 +14,11 @@ import (
 func main() {
 	host, port := portal.ParseFlags()
 	repo := provider.NewJsonTodosRepository("./data/todos.json")
-	createTodosRouter(repo)
+	createBackendAPIRouter(repo)
 	runServer(host, port)
 }
 
-func createTodosRouter(r domain.TodosRepository) {
+func createBackendAPIRouter(r domain.TodosRepository) {
 	http.Handle("/api/todos/add-todo", portal.AddTodo(messagehandler.AddTodo(r)))
 	http.Handle("/api/todos/clear-completed", portal.ClearCompleted(messagehandler.ClearCompleted(r)))
 	http.Handle("/api/todos/destroy-todo", portal.DestroyTodo(messagehandler.DestroyTodo(r)))

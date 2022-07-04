@@ -3,7 +3,7 @@ package messagehandler
 import "todos_backend_server/domain"
 
 func ToggleTodo(repo domain.TodosRepository) domain.ToggleTodoCommandHandler {
-	toggleTodo := func(todos []domain.Todo, id int) []domain.Todo {
+	toggleAll := func(todos []domain.Todo, id int) []domain.Todo {
 		var result []domain.Todo
 		for _, t := range todos {
 			if t.Id == id {
@@ -16,7 +16,7 @@ func ToggleTodo(repo domain.TodosRepository) domain.ToggleTodoCommandHandler {
 
 	return func(c domain.ToggleTodoCommand) domain.CommandStatus {
 		todos := repo.Load()
-		todos = toggleTodo(todos, c.Id)
+		todos = toggleAll(todos, c.Id)
 		repo.Store(todos)
 		return domain.Success()
 	}
