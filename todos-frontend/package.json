@@ -2,11 +2,12 @@
   "name": "todos-frontend",
   "private": "true",
   "scripts": {
-    "all": "npm run build && npm run eslint && npm run prettier:check",
+    "all": "npm run build && npm run test && npm run analyze",
     "start": "webpack serve --mode=development",
     "build": "webpack --mode=production && cp -R public/* dist/",
     "clean": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "analyze": "npm run prettier:check && npm run eslint",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
     "eslint": "eslint src/**",
